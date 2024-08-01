@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/hankaku_converter" >
-        <file>icon.png</file>
-    </qresource>
-</RCC>
