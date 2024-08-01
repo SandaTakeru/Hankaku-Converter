@@ -1,0 +1,43 @@
+[general]
+name=Hankaku Converter
+qgisMinimumVersion=3.0
+description=This plug-in converts string attribute values to full-width (Zenkaku) and half-width (Hankaku) characters to each other.
+version=0.20240801
+author=Sanda Takeru
+email=takeru_sanda999@maff.go.jp
+
+about=This plug-in converts string attribute values to full-width (Zenkaku) and half-width (Hankaku) characters to each other. Only alphanumeric symbols are supported. --- このプラグインは、指定したベクタレイヤーで、すべてのString型の属性値について、全角文字と半角文字を交互に変換します。アルファベット・数字・記号のみ対応しています。
+
+tracker=https://github.com/SandaTakeru/Hankaku-Converter/issues
+repository=https://github.com/SandaTakeru/Hankaku-Converter
+
+hasProcessingProvider=no
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags= Japanese, string, attribute, harf-width, full-length ,日本語 ,全角 ,半角 ,characters
+
+homepage=https://github.com/SandaTakeru/Hankaku-Converter
+category=Plugin
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=Database
+
+# If the plugin can run on QGIS Server.
+server=False
+
+
+LICENSE=LICENSE
