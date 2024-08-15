@@ -150,18 +150,20 @@ class HankakuConverter:
 
             def convert_characters(layer, convert_to_half):
                 try:
+                    if convert_to_half:
+                        translation_table = str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)})
+                    else:
+                        translation_table = str.maketrans({chr(0x0021 + i): chr(0xFF01 + i) for i in range(94)})
+
                     layer.startEditing()  # Start the editing session.
-                    for feature in layer.getFeatures():
-                        for field in layer.fields():
-                            if field.typeName() == 'String':
+                    for field in layer.fields():
+                        if field.typeName() == 'String':
+                            for feature in layer.getFeatures():                           
                                 value = feature[field.name()]
                                 if value:
-                                    if convert_to_half:
-                                        translation_table = str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)})
-                                    else:
-                                        translation_table = str.maketrans({chr(0x0021 + i): chr(0xFF01 + i) for i in range(94)})
                                     feature[field.name()] = value.translate(translation_table)
                                     layer.updateFeature(feature)
+                                    
                 except Exception as e:
                     print(f"An error occurred: {e}")
                 finally:
