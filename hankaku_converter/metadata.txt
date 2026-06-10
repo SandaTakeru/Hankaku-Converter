@@ -1,26 +1,27 @@
 [general]
 name=Hankaku Converter
-qgisMinimumVersion=3.0
-description=This plug-in converts string attribute values to full-width (Zenkaku) and half-width (Hankaku) characters to each other.
-version=0.20240815
+qgisMinimumVersion=4.0
+description=This plug-in converts string attribute values between full-width (Zenkaku) and half-width (Hankaku) characters.
+version=20260611
 author=Sanda Takeru
-email=takeru_sanda999@maff.go.jp
+email=location.lab@sanda-takeru.com
 
-about=This plug-in converts string attribute values to full-width (Zenkaku) and half-width (Hankaku) characters to each other. Only alphanumeric symbols are supported. --- このプラグインは、指定したベクタレイヤーで、すべてのString型の属性値について、全角文字と半角文字を交互に変換します。アルファベット・数字・記号のみ対応しています。
+about=This plug-in converts string attribute values between full-width (Zenkaku) and half-width (Hankaku) characters. Supports alphanumeric symbols and Katakana. Options: convert specific field only, convert selected features only, include Katakana. --- このプラグインは、指定したベクタレイヤーで、String型の属性値を全角・半角で相互変換します。アルファベット・数字・記号・カタカナに対応。フィールド指定、選択地物のみ、カタカナ変換のオプションあり。
 
 tracker=https://github.com/SandaTakeru/Hankaku-Converter/issues
 repository=https://github.com/SandaTakeru/Hankaku-Converter
 
 hasProcessingProvider=no
 
-# Uncomment the following line and add your changelog:
-# changelog=Removing unnecessary data.
+changelog=
+  20260611: カタカナ（全角・半角）の相互変換に対応。変換フィールドの個別指定オプション追加（空欄=全フィールド）。選択地物のみ変換するオプション追加。編集モード中レイヤにも対応。ダイアログを非モーダル化してマップキャンバスと同時操作可能に。
+  20260609: QGIS 4.0対応（Qt6 / Python 3.12）。
 
 # Tags are comma separated with spaces allowed
-tags= Japanese, string, attribute, harf-width, full-length ,日本語 ,全角 ,半角 ,characters
+tags=Japanese, string, attribute, half-width, full-width, 日本語, 全角, 半角, characters
 
 homepage=https://github.com/SandaTakeru/Hankaku-Converter
-category=Plugin
+category=Vector
 icon=icon.png
 # experimental flag
 experimental=False

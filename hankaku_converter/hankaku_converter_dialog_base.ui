@@ -6,94 +6,145 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>277</width>
-    <height>180</height>
+    <width>380</width>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Hankaku Converter</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>271</width>
-     <height>173</height>
-    </rect>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>8</number>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>10</number>
-    </property>
-    <property name="leftMargin">
-     <number>5</number>
-    </property>
-    <property name="topMargin">
-     <number>5</number>
-    </property>
-    <property name="rightMargin">
-     <number>5</number>
-    </property>
-    <property name="bottomMargin">
-     <number>5</number>
-    </property>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Conversion direction (alphanumeric symbols only)
-変換方向　（英数記号のみ）</string>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>変換方向 (Conversion direction)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="radioButton_ZtoH">
+     <property name="text">
+      <string>全角 → 半角　（Zenkaku → Hankaku）</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="radioButton_HtoZ">
+     <property name="text">
+      <string>半角 → 全角　（Hankaku → Zenkaku）</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>変換するベクタレイヤ　（Vector layer to convert）</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton_options">
+     <property name="text">
+      <string>▶ オプション　Option</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_options">
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_options">
+      <property name="leftMargin">
+       <number>0</number>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_ZtoH">
-      <property name="text">
-       <string>Zenkaku 全角 → Hankaku 半角</string>
+      <property name="topMargin">
+       <number>0</number>
       </property>
-      <property name="checked">
-       <bool>true</bool>
+      <property name="rightMargin">
+       <number>0</number>
       </property>
-      <property name="autoRepeat">
-       <bool>false</bool>
+      <property name="bottomMargin">
+       <number>0</number>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_HtoZ">
-      <property name="text">
-       <string>Hankaku 半角 → Zenkaku 全角</string>
+      <property name="spacing">
+       <number>6</number>
       </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoRepeat">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Vector layer to convert 変換するベクタレイヤ</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox"/>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QDialogButtonBox" name="button_box">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+      <item>
+       <widget class="QLabel" name="label_field">
+        <property name="text">
+         <string>変換するフィールド (Field, blank = all fields)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QgsFieldComboBox" name="mFieldComboBox"/>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_katakana">
+        <property name="text">
+         <string>カタカナも変換する　（Include Katakana）</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_selected">
+        <property name="text">
+         <string>選択地物のみ変換　（Selected features only）</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <customwidgets>
   <customwidget>
@@ -101,11 +152,20 @@
    <extends>QComboBox</extends>
    <header>qgsmaplayercombobox.h</header>
   </customwidget>
+  <customwidget>
+   <class>QgsFieldComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsfieldcombobox.h</header>
+  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>radioButton_ZtoH</tabstop>
   <tabstop>radioButton_HtoZ</tabstop>
   <tabstop>mMapLayerComboBox</tabstop>
+  <tabstop>pushButton_options</tabstop>
+  <tabstop>mFieldComboBox</tabstop>
+  <tabstop>checkBox_katakana</tabstop>
+  <tabstop>checkBox_selected</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -116,8 +176,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>87</x>
-     <y>144</y>
+     <x>190</x>
+     <y>325</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -132,8 +192,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>87</x>
-     <y>144</y>
+     <x>190</x>
+     <y>325</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
